@@ -1,3 +1,8 @@
+# For this data-scraping script we are scrapping data from
+# https://www.spotrac.com/nba/injured-reserve/
+# to get the most recent year's injured players, and then
+# saving 
+
 import requests
 from bs4 import BeautifulSoup
 import csv
@@ -17,7 +22,7 @@ def extract_table_data(table):
 
 # URL of the website. We are getting data for the 4 most recent years,
 # anything beyond that requires a premium account.
-base_url = 'https://www.spotrac.com/nba/injured-reserve/'
+base_url = ''
 years = ['2023', '2022', '2021', '2020']
 
 for year in years:
