@@ -1,47 +1,47 @@
+# In this data-scraping script we are definiting a function that
+# will scrape the most recent headlines from espn and return them
+
 from selenium import webdriver
-from bs4 import BeautifulSoup
 import re
 
-url = 'https://www.espn.com/nba/'
+def get_headlines():
+    """
+    Scrapes headlines from espn while printing status messages.
+    """
+    url = 'https://www.espn.com/nba/'
 
-# Set up the webdriver (you need to have the appropriate browser driver installed)
-driver = webdriver.Chrome()  # For Chrome, you need ChromeDriver: https://sites.google.com/chromium.org/driver/
-driver.get(url)
+    # Set up the webdriver (you need to have the appropriate browser driver installed)
+    driver = webdriver.Chrome()  # For Chrome, you need ChromeDriver: https://sites.google.com/chromium.org/driver/
+    driver.get(url)
 
-# Wait for the page to load (you might need to adjust the sleep duration)
-driver.implicitly_wait(30)
+    # Wait for the page's javascripts to load
+    driver.implicitly_wait(30)
 
-# Get the page source
-html_content = driver.page_source
+    # Get the page source
+    html_content = driver.page_source
 
-soup = BeautifulSoup(html_content, 'html.parser')
+    # Close the browser window
+    driver.quit()
 
-# Pretty print the HTML content
-# print(soup.prettify())
+    # Define a regular expression pattern to match the script content
+    pattern = re.compile(r'<script type="text/javascript">(.*?)</script>', re.DOTALL)
 
-# Close the browser window
-driver.quit()
+    # Search for the javascripts in the HTML content
+    javascripts = pattern.findall(html_content)
 
-# Parse the HTML content using BeautifulSoup
-soup = BeautifulSoup(html_content, 'html.parser')
+    for script in javascripts:
+        # from jsbeautifier import beautify
+        # print(beautify(match))
+        
+        # Look for headlines in each of the javascripts because the order
+        # of the javascripts might change
+        headline_pattern = re.compile(r'"headline":\s*"([^"]+)"')
+        headlines = headline_pattern.findall(script)
 
-# Define a regular expression pattern to match the script content
-pattern = re.compile(r'<script type="text/javascript">(.*?)</script>', re.DOTALL)
+        # If headlines are found, then this is the javascript that we are
+        # looking for. Keep them in the headlines variable so it can be imported
+        if headlines:
+            print("Headlines scraped from ESPN.", "\n")
+            break
 
-# Search for the javascripts in the HTML content
-javascripts = pattern.findall(html_content)
-
-for script in javascripts:
-    # from jsbeautifier import beautify
-    # print(beautify(match))
-    
-    # Look for headlines in each of the javascripts because the order
-    # of the javascripts might change
-    headline_pattern = re.compile(r'"headline":\s*"([^"]+)"')
-    headlines = headline_pattern.findall(script)
-
-    # If headlines are found, then this is the javascript that we are
-    # looking for. Keep them in the headlines variable so it can be imported
-    if headlines:
-        print("Headlines scraped from ESPN.")
-        break
+    return headlines
