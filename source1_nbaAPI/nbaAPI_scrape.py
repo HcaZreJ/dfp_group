@@ -3,14 +3,13 @@ from nba_api.stats.static import *
 import pandas as pd
 from tqdm import tqdm
 import time
-import os
 
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 from datetime import datetime
- 
-def download_data():
+
+def get_player_data():
     start = datetime.now()
     # get active players from NBA API
     nba_players = players.get_active_players()
