@@ -22,9 +22,24 @@ At the heart of WeBall Fantasy Drafter is its intelligent classifier model. This
 
 ## Installation Requirements
 
-To get started with WeBall Fantasy Drafter, ensure you have the following installed:
-- Python Anaconda (latest version)
-- Libraries: nba_api, numpy, pandas, tqdm, sklearn, seaborn, requests, beautifulSoup, re, selenium
+To get started with WeBall Fantasy Drafter, ensure you are using Anaconda. Then run this command:
+```
+conda create --name <env> --file requirements.txt
+```
+Remember to replace `<env>` with the name of the environment that you want to place WeBall Fantasy Drafter in.
+
+After the installations are all finished, make sure to switch to this environment by running:
+
+```
+conda activate <env>
+```
+Replace `<env>` with the name of your environment, then run the `main.py` from the root directory of this project:
+```
+cd /directory_to_WeBall_Fantasy_Drafter_root_dir
+
+python main.py
+```
+Enjoy!
 
 ## Usage
 
