@@ -1,10 +1,8 @@
-## dfp_group
-CMU Fall 2023, Data Focused Python Session D2, Group Project Team 3
-
-
 # WeBall Fantasy Drafter
 
 Welcome to WeBall Fantasy Drafter - the revolutionary tool that will transform your approach to fantasy basketball leagues! This cutting-edge platform is meticulously designed to assist both novice and seasoned users in assembling a dream team of NBA players. Let's dive into the incredible features that make WeBall a game-changer.
+
+CMU Fall 2023, Data Focused Python Session D2, Group Project Team 3
 
 ## Features
 
