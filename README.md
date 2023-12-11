@@ -3,6 +3,7 @@
 Welcome to WeBall Fantasy Drafter - the revolutionary tool that will transform your approach to fantasy basketball leagues! This cutting-edge platform is meticulously designed to assist both novice and seasoned users in assembling a dream team of NBA players. Let's dive into the incredible features that make WeBall a game-changer.
 
 YOUTUBE: https://youtu.be/k2ge9lyKo0A?feature=shared
+
 CMU Fall 2023, Data Focused Python Session D2, Group Project Team 3
 
 ## Features
