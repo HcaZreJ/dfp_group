@@ -22,13 +22,20 @@ At the heart of WeBall Fantasy Drafter is its intelligent classifier model. This
 
 ## Installation Requirements
 
-To get started with WeBall Fantasy Drafter, ensure you have Anaconda and pip installed. Then navigate to the root folder of this project in your terminal, using something like:
+To get started with WeBall Fantasy Drafter, ensure you have Anaconda and pip installed. If you downloaded the zip file of the entire project, then navigate to the root folder of this project in your terminal, using something like:
 
 ```
 cd /directory_to_WeBall_Fantasy_Drafter_root_dir
 ```
 
-then run this command:
+Alternatively, if you would like to clone the repository completely, then run the following commands (the first command is used to navigate to the directory where you would like the project to be in, while the second command is for cloning the repo):
+
+```
+cd /desired_directory_to_WeBall_Fantasy_Drafter
+git clone https://github.com/HcaZreJ/dfp_group.git
+```
+
+now that you have the code on your pc, run this command:
 
 ```
 conda env create -f environment.yml
