@@ -1,7 +1,8 @@
 # In this data-scraping script we are definiting a function that
 # will scrape the most recent headlines from espn and return them
-
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 import re
 
 def get_headlines():
@@ -10,8 +11,8 @@ def get_headlines():
     """
     url = 'https://www.espn.com/nba/'
 
-    # Set up the webdriver (you need to have the appropriate browser driver installed)
-    driver = webdriver.Chrome()  # For Chrome, you need ChromeDriver: https://sites.google.com/chromium.org/driver/
+    # Set up the webdriver
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     driver.get(url)
 
     # Wait for the page's javascripts to load
