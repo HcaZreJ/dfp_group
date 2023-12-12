@@ -1,5 +1,13 @@
+# Group Member Andrew Ids:
+# - Aditya Kolpe: akolpe
+# - Zichen Zhu: zichenzh
+# - Sophie Golunova: sgolunov
+# - Brianna Dincau: bdincau
+# - Emily Harvey: eharvey2
+
 # This is the main function of the program.
 # You only need to run this file.
+
 print("\nImporting necessary packages for the program (Estimated time: 10 seconds)...")
 from source1_nbaAPI.nbaAPI_scrape import get_player_data
 from source2_injuryData.injury_scrape import get_injury_data
@@ -56,7 +64,7 @@ else:
         print()
 
 # Read injury data
-injury_data = pd.read_csv("source2_injuryData/injury_df.csv", header=0, index_col=0)
+injury_data = pd.read_csv(injury_file, header=0, index_col=0)
 
 ################################# Section 3: Player Career Data #################################
 # Specify file path

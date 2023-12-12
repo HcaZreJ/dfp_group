@@ -1,5 +1,8 @@
 # In this data-scraping script we are definiting a function that
 # will scrape the most recent headlines from espn and return them
+# It is always used at the start of the main.py program to collect
+# the most recent headlines and show them to the user.
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager

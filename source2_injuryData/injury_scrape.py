@@ -1,7 +1,8 @@
-# For this data-scraping script we defined a function get_injury_data
+# For this data-scraping script we defined a function: get_injury_data()
 # which can scrape data from https://www.spotrac.com/nba/injured-reserve/
 # to get the most recent year's injured players, and save it to a local 
-# csv inside the folder.
+# csv inside the folder. It is used by main.py when the user wants freshly
+# scraped data.
 
 import requests
 from bs4 import BeautifulSoup

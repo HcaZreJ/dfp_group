@@ -1,3 +1,8 @@
+# In this file we are defining a function: get_player_data()
+# which scrapes player's career stats from nba_api, and storing
+# it inside the folder. It is used by main.py when the user
+# wants freshly scraped data.
+
 from nba_api.stats.endpoints import *
 from nba_api.stats.static import *
 import pandas as pd
